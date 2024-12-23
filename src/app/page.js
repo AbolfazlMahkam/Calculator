@@ -1,23 +1,107 @@
-# ✨ Responsive Calculator with Next.js
+'use client'
+// import Image from "next/image";
+import React from "react";
 
-I’ve built a feature-rich calculator using Next.js that seamlessly handles the four fundamental arithmetic operations:
+export default function Home() {
+  const [display, setDisplay] = React.useState("");
+  const [expression, setExpression] = React.useState([]);
 
-➕ Addition | ➖ Subtraction | ✖️ Multiplication | ➗ Division
+  const handleClick = value => {
+    setDisplay(value);
+    setExpression([...expression, value]);
+  };
 
-# 🔑 Key Features:
+  const handleResult = () => {
+    const result = expression
+      .join("")
+      .split(/(\D)/g)
+      .map((value) => (value.match(/\d/g) ? parseInt(value, 0) : value))
+      .reduce((acc, value, index, array) => {
+        switch (value) {
+          case "+":
+            return (acc = acc + array[index + 1]);
+          case "-":
+            return (acc = acc - array[index + 1]);
+          case "x":
+            return (acc = acc * array[index + 1]);
+          case "÷":
+            return (acc = acc / array[index + 1]);
+          default:
+            return acc;
+        }
+      });
+    setDisplay(result);
+    setExpression("");
+  };
 
-M_PLUS_1. Dual Input Modes:
-  * Use your keyboard keys for quick number entry.
-  * Click on the onscreen buttons for intuitive interaction.
+  React.useEffect(() => {
+    const handleKeyPress = (e) => {
+      const key = e.key;
+      if (!isNaN(key)) {
+        handleClick(Number(key));
+      } else if (["+", "-", "/", "*"].includes(key)) {
+        const operatorMap = { "/": "÷", "*": "x" };
+        handleClick(operatorMap[key] || key);
+      } else if (key === "Enter") {
+        handleResult();
+      } else if (key === "Backspace") {
+        setExpression(expression.slice(0, -1));
+        setDisplay(expression.slice(0, -1).join(""));
+      }
+    };
 
-M_PLUS_2. Responsive Design:
-  * Fully optimized for both desktop and mobile devices.
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [expression]);
 
-M_PLUS_3. Smooth User Experience:
-  * Instant calculations with a clean and minimalist interface.
+  return (
+    <div id="calculator" className="flex justify-center items-center h-dvh">
+      <div className="text-center">
+        <h3 className="bg-slate-300 text-slate-900 font-bold min-h-8 m-auto mt-2 max-w-[245px] py-2 px-3 rounded-xl">{display}</h3>
+        <p className="bg-slate-400 text-slate-900 min-h-8 m-auto mt-2 max-w-[245px] py-1 px-2 rounded-xl">{expression}</p>
 
-# 🚀 Why This Project?
+        <section className="flex justify-center items-center pt-2">
+          <section>
+            <section className="grid grid-cols-3 gap-2">
+              {
+                [7, 8, 9, 4, 5, 6, 1, 2, 3].map((num) => (
+                  <button
+                    key={num}
+                    className="w-14 h-14 bg-slate-800 rounded-full"
+                    onClick={() => handleClick(num)}
+                  >
+                    {num}
+                  </button>
+                ))
+              }
+            </section>
 
-This calculator was designed not only to perform basic operations but also as a demonstration of the power and flexibility of Next.js in creating dynamic, interactive applications.
+            <section>
+              <button
+                className="w-[182px] h-14 bg-slate-800 rounded-full mt-2"
+                onClick={() => handleClick(0)}
+              >
+                0
+              </button>
+            </section>
+          </section>
 
-Feel free to explore the code, try it out, and let me know your thoughts! 😊
+          <section className="grid grid-cols-1 gap-2 pl-2">
+            {
+              ["÷", "x", "-", "+"].map((op) => (
+                <button
+                  key={op}
+                  className="w-14 h-[42px] bg-orange-600 rounded-full"
+                  onClick={() => handleClick(op)}
+                >
+                  {op}
+                </button>
+              ))
+            }
+            <button className="w-14 h-[42px] bg-orange-600 rounded-full" onClick={() => handleResult()}>=</button>
+          </section>
+        </section>
+      </div>
+    </div>
+  )
+}
