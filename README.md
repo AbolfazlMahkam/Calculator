@@ -24,6 +24,18 @@ A quick glimpse of the calculator's seamless functionality.
 3. Smooth User Experience:
         Instant calculations with a clean and minimalist interface.
 
+# 🚀 Steps to Run the Application
+
+To get started with the Calculator application, follow these steps:
+
+1. Download the application from the [Release]().
+2. Open your terminal and navigate to the Calculator project directory.
+3. Run ```npm install``` to install all necessary node modules.
+4. Run ```npm update``` to ensure all node modules are up to date.
+5. Start the server by running ```npm run dev```. The server will listen on port 3000.
+6. Open your preferred browser and go to ```127.0.0.1:3000``` or ```localhost:3000``` to access the application.
+7. Enjoy using the calculator for your everyday calculations! 😄
+
 # 🚀 Why This Project?
 
 This calculator was designed not only to perform basic operations but also as a demonstration of the power and flexibility of Next.js in creating dynamic, interactive applications.
