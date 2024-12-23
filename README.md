@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ✨ Responsive Calculator with Next.js
 
-## Getting Started
+I’ve built a feature-rich calculator using Next.js that seamlessly handles the four fundamental arithmetic operations:
 
-First, run the development server:
+➕ Addition | ➖ Subtraction | ✖️ Multiplication | ➗ Division
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+[![My Skills](https://skillicons.dev/icons?i=next)](https://skillicons.dev)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🎥 Demo: See the Calculator in Action!
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+![Calculator Demo](./public/Calculator.gif)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A quick glimpse of the calculator's seamless functionality.
 
-## Learn More
+# 🔑 Key Features:
 
-To learn more about Next.js, take a look at the following resources:
+1. Dual Input Modes:
+        Use your keyboard keys for quick number entry.
+        Click on the onscreen buttons for intuitive interaction.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Responsive Design:
+        Fully optimized for both desktop and mobile devices.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Smooth User Experience:
+        Instant calculations with a clean and minimalist interface.
 
-## Deploy on Vercel
+# 🚀 Why This Project?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This calculator was designed not only to perform basic operations but also as a demonstration of the power and flexibility of Next.js in creating dynamic, interactive applications.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to explore the code, try it out, and let me know your thoughts! 😊
