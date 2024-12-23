@@ -28,7 +28,7 @@ A quick glimpse of the calculator's seamless functionality.
 
 To get started with the Calculator application, follow these steps:
 
-1. Download the application from the [Release]().
+1. Download the application from the [Release](https://github.com/AbolfazlMahkam/Calculator/releases/).
 2. Open your terminal and navigate to the Calculator project directory.
 3. Run ```npm install``` to install all necessary node modules.
 4. Run ```npm update``` to ensure all node modules are up to date.
