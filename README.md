@@ -1,10 +1,10 @@
 # ✨ Responsive Calculator with Next.js
 
-I’ve built a feature-rich calculator using Next.js that seamlessly handles the four fundamental arithmetic operations:
+I’ve built a feature-rich calculator using React.js and Next.js that seamlessly handles the four fundamental arithmetic operations:
 
 ➕ Addition | ➖ Subtraction | ✖️ Multiplication | ➗ Division
 
-[![My Skills](https://skillicons.dev/icons?i=next)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=react,next)](https://skillicons.dev)
 
 # 🎥 Demo: See the Calculator in Action!
 
